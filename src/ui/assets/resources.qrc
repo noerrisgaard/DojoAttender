@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="images">
+    <file>Backgrnd_nowibk.png</file>
+    <file>Backgrnd.png</file>
+  </qresource>
+</RCC>
