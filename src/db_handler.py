@@ -239,6 +239,7 @@ class DataTransferManager(QDialog):
     def __init__(self, parent, observer):
         """Initiate popup dialog and connect signals."""
         super().__init__(parent)
+        self.generator = None
         self.dialog = Ui_DataTransfer()
         self.dialog.setupUi(self)
         self.setWindowFlag(Qt.FramelessWindowHint)
@@ -258,7 +259,8 @@ class DataTransferManager(QDialog):
 
     def closeEvent(self, event):
         """To be called when dialog closes."""
-        self.generator.close()
+        if self.generator is not None:
+            self.generator.close()
         event.accept()
 
     def update_label(self, update_str):
